@@ -2,11 +2,10 @@ package com.sinalizaai.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import com.sinalizaai.model.Sinal;
 
 @Entity
-@Table(name = "sinais")
-public class Sinal {
+@Table(name = "usuarios_adm")
+public class UsuarioAdm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,28 +14,29 @@ public class Sinal {
     @Column(nullable = false)
     private String nome;
 
-    private String categoria;
+    @Column(nullable = false)
+    private String email;
 
-    private Boolean ativo;
+    @Column(name = "senha_hash", nullable = false)
+    private String senhaHash;
+
+    @Column(name = "nivel_acesso")
+    private String nivelAcesso;
 
     @Column(name = "criado_em")
     private LocalDateTime criadoEm;
 
-    @Column(name = "atualizado_em")
-    private LocalDateTime atualizadoEm;
-
-    // Getters e Setters
     public Integer getId() { return id; }
     public String getNome() { return nome; }
-    public String getCategoria() { return categoria; }
-    public Boolean getAtivo() { return ativo; }
+    public String getEmail() { return email; }
+    public String getSenhaHash() { return senhaHash; }
+    public String getNivelAcesso() { return nivelAcesso; }
     public LocalDateTime getCriadoEm() { return criadoEm; }
-    public LocalDateTime getAtualizadoEm() { return atualizadoEm; }
 
     public void setId(Integer id) { this.id = id; }
     public void setNome(String nome) { this.nome = nome; }
-    public void setCategoria(String categoria) { this.categoria = categoria; }
-    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
+    public void setEmail(String email) { this.email = email; }
+    public void setSenhaHash(String senhaHash) { this.senhaHash = senhaHash; }
+    public void setNivelAcesso(String nivelAcesso) { this.nivelAcesso = nivelAcesso; }
     public void setCriadoEm(LocalDateTime criadoEm) { this.criadoEm = criadoEm; }
-    public void setAtualizadoEm(LocalDateTime atualizadoEm) { this.atualizadoEm = atualizadoEm; }
 }

@@ -18,3 +18,7 @@ public class SinalService {
         return sinalRepository.findByAtivoTrue();
     }
 }
+
+public Sinal salvar(Sinal sinal) {
+    return sinalRepository.save(sinal);
+}
