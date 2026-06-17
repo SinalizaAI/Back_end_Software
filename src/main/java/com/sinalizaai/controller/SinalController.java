@@ -22,10 +22,10 @@ public class SinalController {
         List<Sinal> sinais = sinalService.listarAtivos();
         return ResponseEntity.ok(sinais);
     }
-}
 
-@PostMapping
-public ResponseEntity<Sinal> criarSinal(@RequestBody Sinal sinal) {
-    Sinal novo = sinalService.salvar(sinal);
-    return ResponseEntity.ok(novo);
+    @PostMapping
+    public ResponseEntity<Sinal> criarSinal(@RequestBody Sinal sinal) {
+        Sinal novo = sinalService.salvar(sinal);
+        return ResponseEntity.ok(novo);
+    }
 }

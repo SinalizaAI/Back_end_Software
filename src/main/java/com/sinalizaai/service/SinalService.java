@@ -17,8 +17,8 @@ public class SinalService {
     public List<Sinal> listarAtivos() {
         return sinalRepository.findByAtivoTrue();
     }
-}
 
-public Sinal salvar(Sinal sinal) {
-    return sinalRepository.save(sinal);
+    public Sinal salvar(Sinal sinal) {
+        return sinalRepository.save(sinal);
+    }
 }
